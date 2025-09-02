@@ -113,13 +113,22 @@
 
       /* Bigger, clearer skills list with neon accent */
       .skills-list{
-        list-style:none; padding:18px 0 0; margin:0;
-        display:grid; gap:10px; color:var(--muted);
-        font-size:16px; line-height:1.55; flex-grow:1;
+        list-style:none; 
+        padding:18px 0 0; 
+        margin:0;
+        display:grid; 
+        grid-template-columns:1fr 1fr; /* 👈 two columns */
+        gap:12px 18px; /* row gap | column gap */
+        color:var(--muted);
+        font-size:15px; 
+        line-height:1.5; 
+        flex-grow:1;
       }
       .skills-list li{
-        padding:8px 12px; border-left:3px solid var(--neon);
-        background:#0b0f1e66; border-radius:6px;
+        padding:8px 10px; 
+        border-left:3px solid var(--neon); 
+        background:#0b0f1e66; 
+        border-radius:6px;
       }
 
       footer{ color:#7f95b2; font-size:12px; text-align:center; padding:30px 0 }
@@ -173,15 +182,15 @@
             <img src="/portrait.png" alt="Portrait Cyberpunk" />
           </div>
           <ul class="skills-list">
-            <li>Languages: Python (Pandas, SQLAlchemy), SQL</li>
-            <li>Data Processing & Orchestration: Apache Spark, Apache Airflow</li>
-            <li>Databases & Warehouses: Snowflake, Relational Databases, Amazon Redshift, Google BigQuery</li>
-            <li>Cloud Platforms: AWS (S3, Glue), GCP, Azure</li>
-            <li>Containerization & IaC: Docker, Terraform</li>
-            <li>ETL & Data Pipelines: ETL/ELT Pipeline Design, Data Modelling, Data Cleansing & Transformation, Automation</li>
-            <li>BI & Visualisation: Tableau (data source engineering)</li>
-            <li>Tools & Technologies: REST APIs, FTP/SFTP, Git</li>
-          </ul>
+          <li>Languages: Python (Pandas, SQLAlchemy), SQL</li>
+          <li>Data Processing & Orchestration: Apache Spark, Apache Airflow</li>
+          <li>Databases & Warehouses: Snowflake, Relational Databases, Amazon Redshift, Google BigQuery</li>
+          <li>Cloud Platforms: AWS (S3, Glue), GCP, Azure</li>
+          <li>Containerization & IaC: Docker, Terraform</li>
+          <li>ETL & Data Pipelines: ETL/ELT Pipeline Design, Data Modelling, Data Cleansing & Transformation, Automation</li>
+          <li>BI & Visualisation: Tableau (data source engineering)</li>
+          <li>Tools & Technologies: REST APIs, FTP/SFTP, Git</li>
+        </ul>
         </aside>
       </main>
 
