@@ -112,24 +112,63 @@
       }
 
       /* Bigger, clearer skills list with neon accent */
-      .skills-list{
-        list-style:none; 
-        padding:18px 0 0; 
-        margin:0;
-        display:grid; 
-        grid-template-columns:1fr 1fr; /* 👈 two columns */
-        gap:12px 18px; /* row gap | column gap */
-        color:var(--muted);
-        font-size:15px; 
-        line-height:1.5; 
-        flex-grow:1;
+      /* Accordion container fills card height */
+      .skills-accordion{
+        display:flex; flex-direction:column; gap:12px; margin-top:18px; flex:1 1 auto;
       }
-      .skills-list li{
-        padding:8px 10px; 
-        border-left:3px solid var(--neon); 
-        background:#0b0f1e66; 
-        border-radius:6px;
+      
+      /* Each dropdown */
+      .skills-accordion details{
+        border:1px solid #202848; border-radius:12px;
+        background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+        overflow:hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,.25);
       }
+
+      /* Header row */
+      .skills-accordion summary{
+        list-style:none; cursor:pointer; user-select:none; outline:none;
+        display:flex; align-items:center; justify-content:space-between; gap:12px;
+        padding:12px 14px;
+        font-weight:600; letter-spacing:.2px;
+        background: #0b0f1e88;
+        border-left:3px solid var(--neon);
+      }
+
+      /* Remove default marker */
+      .skills-accordion summary::-webkit-details-marker { display:none; }
+      
+      /* Category label + icon */
+      .skills-accordion .label{ display:flex; align-items:center; gap:10px; }
+      .skills-accordion .dot{
+        width:8px; height:8px; border-radius:50%; background:var(--neon);
+        box-shadow:0 0 10px var(--neon);
+      }
+
+      /* Chevron icon */
+      .skills-accordion .chevron{
+        transition: transform .18s ease;
+      }
+      .skills-accordion details[open] .chevron{
+        transform: rotate(90deg);
+      }
+
+      /* Panel content */
+      .skills-accordion .panel{
+        padding:10px 14px 14px;
+      }
+      .skills-accordion .panel ul{
+        margin:0; padding:0; list-style:none; display:grid; gap:8px; color:var(--muted);
+        font-size:15px; line-height:1.55;
+      }
+      .skills-accordion .panel li{
+        padding:6px 10px; border-left:2px solid #293060; background:#0b0f1e66; border-radius:6px;
+      }
+      
+      /* Optional: neon accent per category */
+      details[data-accent="magenta"] summary{ border-left-color: var(--neon-2); }
+      details[data-accent="green"] summary{ border-left-color: var(--neon-3); }
+
 
       footer{ color:#7f95b2; font-size:12px; text-align:center; padding:30px 0 }
       footer a{ color:var(--neon); text-decoration:none }
@@ -178,20 +217,122 @@
         </section>
 
         <aside class="card">
-          <div class="avatar">
-            <img src="/portrait.png" alt="Portrait Cyberpunk" />
-          </div>
-          <ul class="skills-list">
-          <li>Languages: Python (Pandas, SQLAlchemy), SQL</li>
-          <li>Data Processing & Orchestration: Apache Spark, Apache Airflow</li>
-          <li>Databases & Warehouses: Snowflake, Relational Databases, Amazon Redshift, Google BigQuery</li>
-          <li>Cloud Platforms: AWS (S3, Glue), GCP, Azure</li>
-          <li>Containerization & IaC: Docker, Terraform</li>
-          <li>ETL & Data Pipelines: ETL/ELT Pipeline Design, Data Modelling, Data Cleansing & Transformation, Automation</li>
-          <li>BI & Visualisation: Tableau (data source engineering)</li>
-          <li>Tools & Technologies: REST APIs, FTP/SFTP, Git</li>
-        </ul>
-        </aside>
+        <div class="avatar">
+          <img src="/portrait.png" alt="Portrait Cyberpunk" />
+        </div>
+      
+        <div class="skills-accordion">
+          <details open data-accent="green">
+            <summary>
+              <span class="label"><span class="dot"></span>Languages</span>
+              <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </summary>
+            <div class="panel">
+              <ul>
+                <li>Python (Pandas, SQLAlchemy)</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+          </details>
+
+          <details data-accent="magenta">
+            <summary>
+              <span class="label"><span class="dot"></span>Data Processing &amp; Orchestration</span>
+              <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </summary>
+            <div class="panel">
+              <ul>
+                <li>Apache Spark</li>
+                <li>Apache Airflow</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="label"><span class="dot"></span>Databases &amp; Warehouses</span>
+              <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </summary>
+            <div class="panel">
+              <ul>
+                <li>Snowflake</li>
+                <li>Relational Databases</li>
+                <li>Amazon Redshift</li>
+                <li>Google BigQuery</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="label"><span class="dot"></span>Cloud Platforms</span>
+              <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </summary>
+            <div class="panel">
+              <ul>
+                <li>AWS (S3, Glue)</li>
+                <li>GCP</li>
+                <li>Azure</li>
+              </ul>
+            </div>
+          </details>
+
+          <details data-accent="green">
+            <summary>
+              <span class="label"><span class="dot"></span>Containerization &amp; IaC</span>
+              <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </summary>
+            <div class="panel">
+              <ul>
+                <li>Docker</li>
+                <li>Terraform</li>
+              </ul>
+            </div>
+          </details>
+
+          <details data-accent="magenta">
+            <summary>
+              <span class="label"><span class="dot"></span>ETL &amp; Data Pipelines</span>
+              <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </summary>
+            <div class="panel">
+              <ul>
+                <li>ETL/ELT Pipeline Design</li>
+                <li>Data Modelling</li>
+                <li>Data Cleansing &amp; Transformation</li>
+                <li>Automation</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="label"><span class="dot"></span>BI &amp; Visualisation</span>
+              <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </summary>
+            <div class="panel">
+              <ul>
+                <li>Tableau (data source engineering)</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="label"><span class="dot"></span>Tools &amp; Technologies</span>
+              <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </summary>
+            <div class="panel">
+              <ul>
+                <li>REST APIs</li>
+                <li>FTP/SFTP</li>
+                <li>Git</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </aside>
+
       </main>
 
       <footer>
