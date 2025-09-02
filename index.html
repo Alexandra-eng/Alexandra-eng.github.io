@@ -59,10 +59,15 @@
       .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid #2a3050; border-radius:999px; background: #0b0f1e88; color:var(--muted); font-size:12px}
       .badge .dot{width:6px; height:6px; border-radius:50%; background:var(--neon); box-shadow:0 0 10px var(--neon)}
 
-      .card{ background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
-             border:1px solid #202848; border-radius:20px; padding:28px; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+      /* Cards now flex and fill height */
+      .card{
+        background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+        border:1px solid #202848; border-radius:20px; padding:28px; box-shadow:0 20px 60px rgba(0,0,0,.35);
+        display:flex; flex-direction:column; height:100%;
+      }
 
-      .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center;}
+      /* Make columns equal height */
+      .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:stretch; }
       @media (max-width: 840px){ .hero{ grid-template-columns:1fr; } }
 
       h1{ font-family:Orbitron, Inter; font-size: clamp(32px, 4vw, 54px); line-height:1.1; margin:0 0 12px;}
@@ -106,6 +111,17 @@
                     radial-gradient(circle at 80% 80%, #ff2bd622, transparent 40%);
       }
 
+      /* Bigger, clearer skills list with neon accent */
+      .skills-list{
+        list-style:none; padding:18px 0 0; margin:0;
+        display:grid; gap:10px; color:var(--muted);
+        font-size:16px; line-height:1.55; flex-grow:1;
+      }
+      .skills-list li{
+        padding:8px 12px; border-left:3px solid var(--neon);
+        background:#0b0f1e66; border-radius:6px;
+      }
+
       footer{ color:#7f95b2; font-size:12px; text-align:center; padding:30px 0 }
       footer a{ color:var(--neon); text-decoration:none }
     </style>
@@ -116,7 +132,7 @@
 
     <div class="container">
       <header>
-        <div class="logo">A\u00a0E</div>
+        <div class="logo">A&nbsp;E</div>
         <div class="badge"><span class="dot"></span>Available for opportunities</div>
       </header>
 
@@ -156,7 +172,7 @@
           <div class="avatar">
             <img src="/portrait.png" alt="Portrait Cyberpunk" />
           </div>
-          <ul style="list-style:none; padding:14px 0 0; margin:0; display:grid; gap:8px; color:var(--muted); font-size:14px">
+          <ul class="skills-list">
             <li>Languages: Python (Pandas, SQLAlchemy), SQL</li>
             <li>Data Processing & Orchestration: Apache Spark, Apache Airflow</li>
             <li>Databases & Warehouses: Snowflake, Relational Databases, Amazon Redshift, Google BigQuery</li>
