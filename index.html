@@ -1,367 +1,198 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Alexandra Bourgeat — Welcome</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Data Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0e14;
+    --bg2:#11151f;
+    --card:#141926;
+    --line:#222a3d;
+    --text:#e6ebf4;
+    --muted:#8b94a7;
+    --dim:#5d6577;
+    --accent:#22d3ee;
+    --accent-dim:#0e7490;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* subtle grid texture*/
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(34,211,238,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(34,211,238,.025) 1px,transparent 1px);
+    background-size:60px 60px;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000,transparent 80%);
+  }
+  .wrap{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:0 28px}
+  .mono{font-family:'JetBrains Mono',monospace}
+  a{color:inherit;text-decoration:none}
 
-    <!-- SEO -->
-    <meta name="description" content="Alexandra Bourgeat — data analyst. Projects, LinkedIn, LeetCode, and CV." />
-    <link rel="canonical" href="https://alexandra-eng.github.io/" />
+  /* top nav */
+  nav.top{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:1px solid var(--line)}
+  nav.top .brand{font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+  nav.top .brand .tick{color:var(--accent)}
+  nav.top .navlinks{display:flex;gap:26px;font-size:.92rem;color:var(--muted)}
+  nav.top .navlinks a{transition:color .2s}
+  nav.top .navlinks a:hover{color:var(--accent)}
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Alexandra Bourgeat — Portfolio" />
-    <meta property="og:description" content="Projects, LinkedIn, LeetCode, and CV." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alexandra-eng.github.io/" />
-    <meta property="og:image" content="https://alexandra-eng.github.io/og-image.jpg" />
+  /* hero */
+  header.hero{padding:84px 0 64px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--accent);letter-spacing:.04em;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  h1{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:700;line-height:1.08;letter-spacing:-.025em;margin-bottom:22px}
+  h1 .grad{background:linear-gradient(120deg,var(--accent),#6366f1);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:1.2rem;color:var(--muted);max-width:620px;margin-bottom:36px}
+  .lead strong{color:var(--text);font-weight:600}
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  /* CTA buttons */
+  .cta{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:9px;font-size:.95rem;font-weight:500;transition:.2s;border:1px solid var(--line)}
+  .btn svg{width:17px;height:17px}
+  .btn.primary{background:var(--accent);color:#06222a;border-color:var(--accent);font-weight:600}
+  .btn.primary:hover{background:#67e8f9;transform:translateY(-2px)}
+  .btn.ghost{background:var(--card);color:var(--text)}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 
-    <style>
-      :root{
-        --bg:#0a0b10;          /* deep space */
-        --bg-2:#0f1020;        /* layered depth */
-        --fg:#e6f3ff;          /* text */
-        --muted:#9ab4cc;       /* subtext */
-        --neon:#66e0ff;        /* cyan */
-        --neon-2:#ff2bd6;      /* magenta */
-        --neon-3:#b6ff2b;      /* acid green */
-        --card:#0f1322;
-      }
-      *{box-sizing:border-box}
-      html,body{height:100%}
-      body{
-        margin:0; background: radial-gradient(1200px 600px at 80% 10%, #13162b 0%, transparent 60%),
-                               radial-gradient(900px 400px at 20% 90%, #15183a 0%, transparent 55%),
-                               linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-        color:var(--fg);
-        font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-        overflow-x:hidden;
-      }
-      .scanlines:before{
-        content:''; position:fixed; inset:0; pointer-events:none; opacity:.06; mix-blend-mode:soft-light;
-        background: repeating-linear-gradient(0deg, #0000 0 2px, #000 2px 3px);
-      }
-      .grid{ position:fixed; inset:0; background:
-        linear-gradient(transparent 0 96%, rgba(255,255,255,.08) 97%, transparent 100%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px 80px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 80px);
-        mask-image: radial-gradient(ellipse at 50% 30%, #000 40%, transparent 80%);
-        pointer-events:none;
-      }
-      .container{ max-width:960px; margin:0 auto; padding:24px;}
-      header{display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0;}
-      .logo{font-family:Orbitron,Inter; font-size:18px; letter-spacing:.2em; text-transform:uppercase; color:var(--fg)}
-      .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid #2a3050; border-radius:999px; background: #0b0f1e88; color:var(--muted); font-size:12px}
-      .badge .dot{width:6px; height:6px; border-radius:50%; background:var(--neon); box-shadow:0 0 10px var(--neon)}
+  /* section */
+  section{padding:48px 0;border-top:1px solid var(--line)}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+  .sec-title{font-size:1.7rem;font-weight:700;letter-spacing:-.02em;margin-bottom:32px}
 
-      /* Cards now flex and fill height */
-      .card{
-        background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
-        border:1px solid #202848; border-radius:20px; padding:28px; box-shadow:0 20px 60px rgba(0,0,0,.35);
-        display:flex; flex-direction:column; height:100%;
-      }
+  /* projects */
+  .projects{display:grid;gap:18px}
+  .project{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:26px 28px;transition:.25s;position:relative;overflow:hidden;
+  }
+  .project::before{content:"";position:absolute;left:0;top:0;height:100%;width:3px;background:var(--accent);opacity:0;transition:.25s}
+  .project:hover{border-color:#2e3950;transform:translateY(-3px)}
+  .project:hover::before{opacity:1}
+  .project .phead{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}
+  .project h3{font-size:1.2rem;font-weight:600;letter-spacing:-.01em}
+  .project .repo{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--muted);display:inline-flex;align-items:center;gap:7px;white-space:nowrap;transition:color .2s}
+  .project .repo:hover{color:var(--accent)}
+  .project .repo svg{width:15px;height:15px}
+  .project p{color:var(--muted);font-size:.98rem;margin-bottom:16px;max-width:640px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{font-family:'JetBrains Mono',monospace;font-size:.76rem;color:var(--accent);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);padding:4px 10px;border-radius:6px}
 
-      /* Make columns equal height */
-      .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:stretch; }
-      @media (max-width: 840px){ .hero{ grid-template-columns:1fr; } }
+  /* skills row */
+  .skills{display:flex;flex-wrap:wrap;gap:10px}
+  .skills span{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--text);background:var(--bg2);border:1px solid var(--line);padding:8px 14px;border-radius:8px}
 
-      h1{ font-family:Orbitron, Inter; font-size: clamp(40px, 6vw, 80px); line-height:1.1; margin:0 0 12px;}
-      .neon{
-        color:var(--neon);
-        text-shadow: 0 0 10px #66e0ff55, 0 0 20px #66e0ff40, 0 0 35px #66e0ff30,
-                     0 0 60px #00c8ff10;
-      }
-      .glitch{ position:relative; display:inline-block }
-      .glitch:before, .glitch:after{ content:attr(data-text); position:absolute; left:0; top:0; width:100%; overflow:hidden; clip-path: inset(0 0 0 0);}
-      .glitch:before{ color:var(--neon-2); transform: translate(2px, 0); opacity:.7; animation:fuzz 3s infinite linear alternate-reverse }
-      .glitch:after{ color:var(--neon-3); transform: translate(-2px, 0); opacity:.7; animation:fuzz 2.5s infinite linear alternate }
-      @keyframes fuzz{ 0%{ clip-path: inset(0 0 90% 0)} 20%{ clip-path: inset(0 0 40% 0)} 40%{ clip-path: inset(0 0 75% 0)} 60%{ clip-path: inset(0 0 30% 0)} 80%{ clip-path: inset(0 0 60% 0)} 100%{ clip-path: inset(0 0 10% 0)} }
+  footer{padding:40px 0 56px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;color:var(--dim);font-size:.88rem}
+  footer .fl{display:flex;gap:20px}
+  footer a:hover{color:var(--accent)}
+  ::selection{background:rgba(34,211,238,.25)}
+</style>
+</head>
+<body>
+<div class="wrap">
 
-      .intro{ color:var(--muted); max-width:62ch }
+  <nav class="top">
+    <div class="brand">Alexandra Bourgeat<span class="tick">.</span></div>
+  </nav>
 
-      .btns{ display:flex; flex-wrap:wrap; gap:14px; margin-top:18px }
-      .btn{
-        --shadow: 0 0 12px currentColor, inset 0 0 12px color-mix(in oklab, currentColor 40%, transparent);
-        display:inline-flex; align-items:center; justify-content:center; gap:10px;
-        padding:12px 16px; border-radius:14px; background:#0c1024; color:var(--fg);
-        border:1px solid #293060; text-decoration:none; font-weight:600;
-        box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-      }
-      .btn:hover{ transform: translateY(-2px); border-color: currentColor }
-      .btn svg{ width:18px; height:18px }
-      .btn.cyan{ color: var(--neon) }
-      .btn.magenta{ color: var(--neon-2) }
-      .btn.green{ color: var(--neon-3) }
-      .btn.yellow{ color: #ffd166 }
-
-      .avatar{
-        aspect-ratio: 1;
-        border-radius:16px; border:1px solid #273055; background:#0b0f1e;
-        position:relative; overflow:hidden;
-      }
-      .avatar img{ width:100%; height:100%; object-fit:cover; filter:contrast(1.1) saturate(1.1) }
-      .avatar:after{
-        content:''; position:absolute; inset:0; mix-blend-mode:screen; pointer-events:none;
-        background: radial-gradient(circle at 20% 20%, #00e5ff33, transparent 30%),
-                    radial-gradient(circle at 80% 80%, #ff2bd622, transparent 40%);
-      }
-
-      /* Bigger, clearer skills list with neon accent */
-      /* Accordion container fills card height */
-      .skills-accordion{
-        display:flex; flex-direction:column; gap:12px; margin-top:18px; flex:1 1 auto;
-      }
-      
-      /* Each dropdown */
-      .skills-accordion details{
-        border:1px solid #202848; border-radius:12px;
-        background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
-        overflow:hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      }
-
-      /* Header row */
-      .skills-accordion summary{
-        list-style:none; cursor:pointer; user-select:none; outline:none;
-        display:flex; align-items:center; justify-content:space-between; gap:12px;
-        padding:12px 14px;
-        font-weight:600; letter-spacing:.2px;
-        background: #0b0f1e88;
-        border-left:3px solid var(--neon);
-      }
-
-      /* Remove default marker */
-      .skills-accordion summary::-webkit-details-marker { display:none; }
-      
-      /* Category label + icon */
-      .skills-accordion .label{ display:flex; align-items:center; gap:10px; }
-      .skills-accordion .dot{
-        width:8px; height:8px; border-radius:50%; background:var(--neon);
-        box-shadow:0 0 10px var(--neon);
-      }
-
-      /* Chevron icon */
-      .skills-accordion .chevron{
-        transition: transform .18s ease;
-      }
-      .skills-accordion details[open] .chevron{
-        transform: rotate(90deg);
-      }
-
-      /* Panel content */
-      .skills-accordion .panel{
-        padding:10px 14px 14px;
-      }
-      .skills-accordion .panel ul{
-        margin:0; padding:0; list-style:none; display:grid; gap:8px; color:var(--muted);
-        font-size:15px; line-height:1.55;
-      }
-      .skills-accordion .panel li{
-        padding:6px 10px; border-left:2px solid #293060; background:#0b0f1e66; border-radius:6px;
-      }
-      
-      /* Optional: neon accent per category */
-      details[data-accent="magenta"] summary{ border-left-color: var(--neon-2); }
-      details[data-accent="green"] summary{ border-left-color: var(--neon-3); }
-
-
-      footer{ color:#7f95b2; font-size:12px; text-align:center; padding:30px 0 }
-      footer a{ color:var(--neon); text-decoration:none }
-    </style>
-  </head>
-  <body>
-    <div class="scanlines"></div>
-    <div class="grid"></div>
-
-    <div class="container">
-      <header>
-        <div class="logo">A&nbsp;E</div>
-        <div class="badge"><span class="dot"></span>Available for opportunities</div>
-      </header>
-
-      <main class="hero">
-        <section class="card">
-          <h1 class="neon glitch" aria-label="Alexandra" data-text="Alexandra">Alexandra</h1>
-          <h1 class="neon glitch" aria-label="Bourgeat" data-text="Bourgeat">Bourgeat</h1>
-          <p class="intro">I’m a data scientist with a strong foundation in Python, statistical modeling, 
-            and machine learning, with experience working on large, real-world datasets. 
-            I’m particularly interested in applying data science to scientific, environmental, 
-            and social challenges, using rigorous analysis, clear communication, and reproducible workflows 
-            to support evidence-based decision-making.</p>
-
-          <nav class="btns" aria-label="Primary">
-            <a class="btn cyan" href="/projects.html">
-              <!-- projects icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
-              My Projects
-            </a>
-            <a class="btn magenta" href="https://www.linkedin.com/in/alexandrabourgeat/" target="_blank" rel="noopener">
-              <!-- linkedin icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.9-2.2 4-2.2 4.3 0 5.1 2.8 5.1 6.3V24h-4v-6.9c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V24h-4V8z"/></svg>
-              LinkedIn
-            </a>
-            <a class="btn green" href="https://leetcode.com/u/alexandra94765/" target="_blank" rel="noopener">
-              <!-- code icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l-5 3 5 3"/><path d="M16 9l5 3-5 3"/><path d="M13 4L8 20"/></svg>
-              LeetCode
-            </a>
-            <a class="btn yellow" href="/Alexandra-Eng-CV.pdf" target="_blank" rel="noopener">
-              <!-- download icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
-              View CV
-            </a>
-          </nav>
-        </section>
-
-        <aside class="card">
-  <div class="avatar">
-    <img src="/earth.png" alt="Earth Cyberpunk" />
-  </div>
-
-  <div class="skills-accordion">
-    <details open data-accent="green">
-      <summary>
-        <span class="label"><span class="dot"></span>Languages</span>
-        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-      </summary>
-      <div class="panel">
-        <ul>
-          <li>Python (NumPy, pandas, SciPy, scikit-learn)</li>
-          <li>SQL</li>
-          <li>Bash (basic)</li>
-        </ul>
-      </div>
-    </details>
-
-    <details data-accent="magenta">
-      <summary>
-        <span class="label"><span class="dot"></span>Scientific Computing &amp; Statistics</span>
-        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-      </summary>
-      <div class="panel">
-        <ul>
-          <li>Stats &amp; inference (SciPy, statsmodels)</li>
-          <li>Experiment design &amp; evaluation</li>
-          <li>Uncertainty / confidence intervals (practical)</li>
-        </ul>
-      </div>
-    </details>
-
-    <details>
-      <summary>
-        <span class="label"><span class="dot"></span>Machine Learning</span>
-        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-      </summary>
-      <div class="panel">
-        <ul>
-          <li>Supervised/unsupervised learning (scikit-learn)</li>
-          <li>Model evaluation &amp; explainability (metrics, SHAP – basic)</li>
-          <li>Tree models (XGBoost/LightGBM – familiar)</li>
-        </ul>
-      </div>
-    </details>
-
-    <details>
-      <summary>
-        <span class="label"><span class="dot"></span>Time-Series &amp; Forecasting</span>
-        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-      </summary>
-      <div class="panel">
-        <ul>
-          <li>Time-series analysis (pandas, statsmodels)</li>
-          <li>Forecasting (Prophet – familiar)</li>
-          <li>Anomaly detection / change detection (practical)</li>
-        </ul>
-      </div>
-    </details>
-
-    <details data-accent="green">
-      <summary>
-        <span class="label"><span class="dot"></span>Geospatial &amp; Earth Data</span>
-        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-      </summary>
-      <div class="panel">
-        <ul>
-          <li>GeoPandas, Shapely, pyproj</li>
-          <li>Raster &amp; satellite data (rasterio – familiar)</li>
-          <li>Multidimensional climate data (xarray/netCDF – familiar)</li>
-        </ul>
-      </div>
-    </details>
-
-    <details data-accent="magenta">
-      <summary>
-        <span class="label"><span class="dot"></span>Data Pipelines &amp; Reproducibility</span>
-        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-      </summary>
-      <div class="panel">
-        <ul>
-          <li>ETL/ELT, data cleaning &amp; validation</li>
-          <li>Workflow orchestration (Airflow – familiar)</li>
-          <li>Reproducible analysis (Jupyter, environments, documentation)</li>
-        </ul>
-      </div>
-    </details>
-
-    <details>
-      <summary>
-        <span class="label"><span class="dot"></span>Visualization &amp; Communication</span>
-        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-      </summary>
-      <div class="panel">
-        <ul>
-          <li>Matplotlib, Seaborn</li>
-          <li>Interactive visuals (Plotly – familiar)</li>
-          <li>Clear reporting for technical &amp; non-technical audiences</li>
-        </ul>
-      </div>
-    </details>
-
-    <details>
-      <summary>
-        <span class="label"><span class="dot"></span>Cloud &amp; Compute</span>
-        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-      </summary>
-      <div class="panel">
-        <ul>
-          <li>AWS (S3, Glue) / GCP (basic)</li>
-          <li>BigQuery / Redshift (familiar)</li>
-          <li>Scalable processing (Spark – familiar)</li>
-        </ul>
-      </div>
-    </details>
-
-    <details>
-      <summary>
-        <span class="label"><span class="dot"></span>Tools &amp; Engineering Practices</span>
-        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-      </summary>
-      <div class="panel">
-        <ul>
-          <li>Git/GitHub, code review workflows</li>
-          <li>APIs (REST), data ingestion (SFTP/FTP)</li>
-          <li>Docker (containers), Terraform (basic)</li>
-        </ul>
-      </div>
-    </details>
-  </div>
-</aside>
-
-      </main>
-
-      <footer>
-        © <span id="year"></span> Alexandra Bourgeat · <a href="mailto:bourgeat.alexandra@gmail.com">bourgeat.alexandra@gmail.com</a>
-      </footer>
+  <header class="hero">
+    <div class="eyebrow"><span class="pulse"></span>Available for opportunities</div>
+    <h1>Data Engineer building <span class="grad">reliable data pipelines</span> &amp; analytics infrastructure.</h1>
+    <p class="lead">I design and maintain <strong>scalable ETL systems</strong>, 
+      streaming pipelines, and data warehouses. Below is a selection of my work</p>
+    <div class="cta">
+      <a class="btn primary" href="/Alexandra-Eng-CV.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
+      <a class="btn ghost" href="https://linkedin.com/in/USERNAME" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn ghost" href="https://leetcode.com/u/alexandra94765/" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        LeetCode
+      </a>
+      <a class="btn ghost" href="https://github.com/Alexandra-eng" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+        GitHub
+      </a>
     </div>
+  </header>
 
-    <script>
-      // Set year
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <section id="projects">
+    <div class="sec-label">// Selected work</div>
+    <div class="sec-title">Projects</div>
+    <div class="projects">
+
+      <article class="project">
+        <div class="phead">
+          <h3>Real-time Streaming Pipeline</h3>
+          <a class="repo" href="https://github.com/USERNAME/REPO" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            Repo
+          </a>
+        </div>
+        <p>Kafka-to-warehouse streaming pipeline ingesting millions of events per day with sub-second latency and exactly-once delivery guarantees.</p>
+        <div class="tags"><span>Kafka</span><span>Spark</span><span>Python</span><span>AWS</span></div>
+      </article>
+
+      <article class="project">
+        <div class="phead">
+          <h3>dbt Analytics Warehouse</h3>
+          <a class="repo" href="https://github.com/USERNAME/REPO" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            Repo
+          </a>
+        </div>
+        <p>Modular dbt project with tested transformations, data lineage documentation, and incremental models powering downstream BI dashboards.</p>
+        <div class="tags"><span>dbt</span><span>Snowflake</span><span>SQL</span><span>Airflow</span></div>
+      </article>
+
+      <article class="project">
+        <div class="phead">
+          <h3>Batch ETL Orchestration</h3>
+          <a class="repo" href="https://github.com/USERNAME/REPO" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            Repo
+          </a>
+        </div>
+        <p>Airflow-orchestrated ETL with dynamically generated DAGs, automated data-quality gates, and alerting on SLA breaches.</p>
+        <div class="tags"><span>Airflow</span><span>Docker</span><span>PostgreSQL</span><span>GCP</span></div>
+      </article>
+
+      <article class="project">
+        <div class="phead">
+          <h3>Delta Lakehouse Platform</h3>
+          <a class="repo" href="https://github.com/USERNAME/REPO" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            Repo
+          </a>
+        </div>
+        <p>Medallion-architecture lakehouse with bronze/silver/gold layers, ACID transactions, and time-travel queries on Delta Lake.</p>
+        <div class="tags"><span>Databricks</span><span>Delta Lake</span><span>PySpark</span><span>Azure</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Alexandra Bourgeat</span>
+  </footer>
+
+</div>
+</body>
 </html>
