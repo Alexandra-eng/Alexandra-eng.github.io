@@ -1,0 +1,21 @@
+period,stateid,stateDescription,sectorid,sectorName,price,price-units
+2023-01,CA,California,RES,residential,18.5,cents per kilowatthour
+2023-01,CA,California,TRA,transportation,22.3,cents per kilowatthour
+2023-01,TX,Texas,RES,residential,12.1,cents per kilowatthour
+2023-01,TX,Texas,TRA,transportation,15.8,cents per kilowatthour
+2023-02,CA,California,RES,residential,19.2,cents per kilowatthour
+2023-02,CA,California,TRA,transportation,23.1,cents per kilowatthour
+2023-02,TX,Texas,RES,residential,12.8,cents per kilowatthour
+2023-02,TX,Texas,TRA,transportation,,cents per kilowatthour
+2023-03,CA,California,RES,residential,17.9,cents per kilowatthour
+2023-03,CA,California,TRA,transportation,21.7,cents per kilowatthour
+2023-03,TX,Texas,RES,residential,11.5,cents per kilowatthour
+2023-03,TX,Texas,TRA,transportation,14.9,cents per kilowatthour
+2023-03,NY,New York,COM,commercial,20.4,cents per kilowatthour
+2023-03,NY,New York,IND,industrial,9.8,cents per kilowatthour
+2023-04,NY,New York,RES,residential,21.3,cents per kilowatthour
+2023-04,NY,New York,TRA,transportation,25.0,cents per kilowatthour
+2023-04,FL,Florida,RES,residential,13.4,cents per kilowatthour
+2023-04,FL,Florida,TRA,transportation,,cents per kilowatthour
+2023-05,FL,Florida,RES,residential,14.1,cents per kilowatthour
+2023-05,FL,Florida,TRA,transportation,17.2,cents per kilowatthour

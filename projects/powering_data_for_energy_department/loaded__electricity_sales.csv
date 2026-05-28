@@ -1,0 +1,17 @@
+,year,month,stateid,price,price-units
+0,01,2023,CA,18.5,cents per kilowatthour
+1,01,2023,CA,22.3,cents per kilowatthour
+2,01,2023,TX,12.1,cents per kilowatthour
+3,01,2023,TX,15.8,cents per kilowatthour
+4,02,2023,CA,19.2,cents per kilowatthour
+5,02,2023,CA,23.1,cents per kilowatthour
+6,02,2023,TX,12.8,cents per kilowatthour
+8,03,2023,CA,17.9,cents per kilowatthour
+9,03,2023,CA,21.7,cents per kilowatthour
+10,03,2023,TX,11.5,cents per kilowatthour
+11,03,2023,TX,14.9,cents per kilowatthour
+14,04,2023,NY,21.3,cents per kilowatthour
+15,04,2023,NY,25.0,cents per kilowatthour
+16,04,2023,FL,13.4,cents per kilowatthour
+18,05,2023,FL,14.1,cents per kilowatthour
+19,05,2023,FL,17.2,cents per kilowatthour

@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "stateid": "CA",
+      "stateDescription": "California",
+      "capability": [
+        {
+          "period": "2023-01",
+          "source": "solar",
+          "capacity_mw": 15200.5,
+          "capacity-units": "megawatts"
+        },
+        {
+          "period": "2023-01",
+          "source": "wind",
+          "capacity_mw": 6800.3,
+          "capacity-units": "megawatts"
+        },
+        {
+          "period": "2023-02",
+          "source": "solar",
+          "capacity_mw": 15400.0,
+          "capacity-units": "megawatts"
+        },
+        {
+          "period": "2023-02",
+          "source": "wind",
+          "capacity_mw": 6950.1,
+          "capacity-units": "megawatts"
+        }
+      ]
+    },
+    {
+      "stateid": "TX",
+      "stateDescription": "Texas",
+      "capability": [
+        {
+          "period": "2023-01",
+          "source": "wind",
+          "capacity_mw": 35000.0,
+          "capacity-units": "megawatts"
+        },
+        {
+          "period": "2023-01",
+          "source": "natural gas",
+          "capacity_mw": 52000.7,
+          "capacity-units": "megawatts"
+        },
+        {
+          "period": "2023-02",
+          "source": "wind",
+          "capacity_mw": 35200.4,
+          "capacity-units": "megawatts"
+        },
+        {
+          "period": "2023-02",
+          "source": "natural gas",
+          "capacity_mw": 52100.2,
+          "capacity-units": "megawatts"
+        }
+      ]
+    },
+    {
+      "stateid": "NY",
+      "stateDescription": "New York",
+      "capability": [
+        {
+          "period": "2023-01",
+          "source": "hydro",
+          "capacity_mw": 4500.0,
+          "capacity-units": "megawatts"
+        },
+        {
+          "period": "2023-02",
+          "source": "hydro",
+          "capacity_mw": 4520.0,
+          "capacity-units": "megawatts"
+        }
+      ]
+    },
+    {
+      "stateid": "FL",
+      "stateDescription": "Florida",
+      "capability": [
+        {
+          "period": "2023-01",
+          "source": "solar",
+          "capacity_mw": 8100.0,
+          "capacity-units": "megawatts"
+        },
+        {
+          "period": "2023-02",
+          "source": "solar",
+          "capacity_mw": 8300.5,
+          "capacity-units": "megawatts"
+        }
+      ]
+    }
+  ]
+}
